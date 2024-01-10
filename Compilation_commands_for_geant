@@ -1,0 +1,6 @@
+This file provided my MohamedFATHALLAH and MaissaBOUZIRI will provide you with necessary commands for geany
+*Compile:arm-linux-gnueabihf-gcc -Wall -c "%f" -I./libgpiod/rootfs/include  -I ./sqlite-autoconf-3160200 
+*Build:arm-linux-gnueabihf-gcc -Wall -o "%e" ./customlib/keybdetect.o "%f" -I./libgpiod/rootfs/include -L./libgpiod/rootfs/lib -lgpiod -lpthread -lrt -I ./sqlite-autoconf-3160200 -L ./sqlite-autoconf-3160200/.libs -lsqlite3
+*Lint:cppcheck --language=c --enable=warning,style --template=gcc "%f"
+*Execute:sshpass -p "temppwd" scp ./%e debian@192.168.6.2:/home/debian/emblabs;sshpass -p "temppwd" ssh debian@192.168.6.2 '/home/debian/%e'
+
